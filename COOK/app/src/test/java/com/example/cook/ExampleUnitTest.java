@@ -110,7 +110,7 @@ public class ExampleUnitTest {
 
         //creating an object
         Recipe testRecipe = new Recipe(id, name, description, prepareTime,
-                cookingTime, null, sbsDescription, tags);
+                cookingTime, 0, sbsDescription, tags);
 
         //assert test statements
         assertEquals("return must be equal to id", testRecipe.getId(), id);
@@ -132,6 +132,27 @@ public class ExampleUnitTest {
         assertEquals("return must be equal to tags 7", testRecipe.isLunch(), tags[7]);
         assertEquals("return must be equal to tags 8", testRecipe.isFast_food(), tags[8]);
         assertEquals("return must be equal to tags 9", testRecipe.isSoup(), tags[9]);
+    }
+
+    @Test
+    public void testAddRecipe()
+    {
+
+        int id = 10;
+        String name = "Spaghetti";
+        String description = "description";
+        int prepareTime = 4;
+        int cookingTime = 5;
+        Image testImage = null;
+        String sbsDescription = "step by step";
+        Boolean[] tags = new Boolean[]{true, false, true, false, true,
+                false, true, false, true, false};
+
+        Recipe testRecipe = new Recipe(id, name, description, prepareTime,
+                cookingTime, 0, sbsDescription, tags);
+
+
+        assertEquals(testRecipe.getAllRecipes().size(), testRecipe.getId() + 1);
     }
 
 }

@@ -108,6 +108,12 @@ public class Recipe {
         return new Recipe();
     }
 
+    public ArrayList<Recipe> getAllRecipes() {
+        return allRecipe;
+    }
+
+
+
     //getter and setter
     public int getId() {
         return id;
